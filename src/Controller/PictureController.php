@@ -68,21 +68,21 @@ class PictureController extends AbstractController
 
                     $smallImagePath =  $slugger->slug($originalImageName) . '.jpg';
                     $imagine->open($imagePath)
-                        ->thumbnail(new Box(100, 100))
+                        ->thumbnail(new Box(360, 640))
                         ->save($this->getParameter('images_directory') . '/smallImage' . '/' . $smallImagePath);
                     $picture->setSmallImage($smallImagePath);
 
 
                     $mediumImagePath =  $slugger->slug($originalImageName) . '.jpg';
                     $imagine->open($imagePath)
-                        ->thumbnail(new Box(500, 500))
+                        ->thumbnail(new Box(768, 1024))
                         ->save($this->getParameter('images_directory') . '/mediumImage' . '/' . $mediumImagePath);
                     $picture->setMediumImage($mediumImagePath);
 
 
                     $largeImagePath =  $slugger->slug($originalImageName) . '.jpg';
                     $imagine->open($imagePath)
-                        ->thumbnail(new Box(800, 800))
+                        ->thumbnail(new Box(1366, 768))
                         ->save($this->getParameter('images_directory') . '/largeImage' . '/' . $largeImagePath);
                     $picture->setLargeImage($largeImagePath);
 
